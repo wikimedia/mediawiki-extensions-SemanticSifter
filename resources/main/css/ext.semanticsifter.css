@@ -1,0 +1,22 @@
+.ss-noresults {
+    background-color: #f9f9f9;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px;
+    border: 1px solid #aaa;
+    margin: 1em 0px 0px 0px;
+}
+
+.ss-propertyfilter{
+    display: inline-block;
+    width: 20%;
+}
+
+.ss-propertyfilter li.search-field{
+    width: 100%;
+}
+
+.ss-propertyfilter li.search-field input.default{
+    width: auto !important;
+}
+
