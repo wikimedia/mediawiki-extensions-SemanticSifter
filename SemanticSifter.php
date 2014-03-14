@@ -21,7 +21,8 @@ $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Semantic Sifter',
 	'descriptionmsg' => 'semanticsifter-desc',
-	'version' => '0.1',
+	'version' => '0.0.1',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:SemanticSifter',
 	'author' => 'Kim Eik',
 );
 
