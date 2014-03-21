@@ -37,6 +37,13 @@ $messages['de'] = array(
 	'semanticsifter-message-siftlink-params-error' => 'Fehlende Parameter für die Filter-Parserfunktion.',
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'semanticsifter-button-apply-filter' => 'Aplicar filtro',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Maxim21
@@ -52,6 +59,13 @@ $messages['fr'] = array(
  */
 $messages['ja'] = array(
 	'semanticsifter-button-apply-filter' => 'フィルターを適用',
+);
+
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'semanticsifter-button-apply-filter' => 'Pielietot filtru',
 );
 
 /** Macedonian (македонски)
@@ -86,6 +100,13 @@ $messages['sco'] = array(
  */
 $messages['si'] = array(
 	'semanticsifter-button-apply-filter' => 'පෙරහන යොදන්න',
+);
+
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'semanticsifter-button-apply-filter' => 'Verkställ filter',
 );
 
 /** Ukrainian (українська)
