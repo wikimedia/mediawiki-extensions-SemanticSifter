@@ -61,6 +61,13 @@ $messages['ja'] = array(
 	'semanticsifter-button-apply-filter' => 'フィルターを適用',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'semanticsifter-button-apply-filter' => 'Filteren uwenden',
+);
+
 /** Latvian (latviešu)
  * @author Papuass
  */
@@ -75,6 +82,13 @@ $messages['mk'] = array(
 	'semanticsifter-desc' => 'Овозможува филтрирање на семантички податоци и ги прикажува резултатите во преглед со филтер',
 	'semanticsifter-button-apply-filter' => 'Примени филтер',
 	'semanticsifter-message-siftlink-params-error' => 'Недостасува параметар за филтерската расчленувачка функција.',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'semanticsifter-button-apply-filter' => 'Filter toepassen',
 );
 
 /** Russian (русский)
@@ -115,4 +129,11 @@ $messages['sv'] = array(
 $messages['uk'] = array(
 	'semanticsifter-button-apply-filter' => 'Застосувати фільтр',
 	'semanticsifter-message-siftlink-params-error' => 'Відсутні параметри функція аналізатора siftlink.',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Liuxinyu970226
+ */
+$messages['zh-hans'] = array(
+	'semanticsifter-button-apply-filter' => '应用筛选器',
 );
