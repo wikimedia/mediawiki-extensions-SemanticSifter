@@ -127,6 +127,7 @@ $messages['sv'] = array(
  * @author Andriykopanytsia
  */
 $messages['uk'] = array(
+	'semanticsifter-desc' => 'Дозволяє просіяти семантичні дані і відображає результат у фільтрованому вигляді',
 	'semanticsifter-button-apply-filter' => 'Застосувати фільтр',
 	'semanticsifter-message-siftlink-params-error' => 'Відсутні параметри функція аналізатора siftlink.',
 );
