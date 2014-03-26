@@ -15,7 +15,7 @@ class SiftLink {
 			$filterStorage = new FilterStorageHTTPQuery(false);
 			$filterStorage->setFiltersFromSeparatedString($filters);
 
-			$title = \Title::newFromText($title);
+			$title = \Title::newFromText($parser->recursiveTagParse($title));
 
 			$filters = $filterStorage->size() > 0 ? array(
 				FilterStorageHTTPQuery::QUERY_KEY => $filterStorage->getFiltersAsQueryString(false)
