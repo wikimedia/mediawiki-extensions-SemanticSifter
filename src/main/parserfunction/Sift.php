@@ -191,6 +191,12 @@ class Sift
 					unset($parameters[$key]);
 					break;
 				case '?':
+					//set property of type |?=... as format parameter, used in conjunction with the mainlabel parameter
+					if ($property === '?') {
+						$this->formatParams[$property] = $value;
+						unset($parameters[$key]);
+						break;
+					}
 					//Extract smw property into its own array
 					$this->properties[substr($property, 1)] = $value;
 					unset($parameters[$key]);
