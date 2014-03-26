@@ -26,9 +26,6 @@ $messages['qqq'] = array(
 	'semanticsifter-button-apply-filter' => 'Button which applies filter.
 {{Identical|Apply filter}}',
 	'semanticsifter-message-siftlink-params-error' => 'Message displayed  when error occurs in parameter handling of #siftlink parser function',
-	'semanticsifter-param-query' => 'The main smw query, default parameter, should not be referenced by name',
-	'semanticsifter-param-filterwidth' => 'Parameter that controls the filter input box width.',
-	'semanticsifter-param-display' => 'Controls which components to show. both, filter or result. both is default',
 );
 
 /** German (Deutsch)
@@ -139,5 +136,7 @@ $messages['uk'] = array(
  * @author Liuxinyu970226
  */
 $messages['zh-hans'] = array(
+	'semanticsifter-desc' => '允许通过语义数据筛选以及在筛选视图中显示结果',
 	'semanticsifter-button-apply-filter' => '应用筛选器',
+	'semanticsifter-message-siftlink-params-error' => '缺少待筛选解析器函数。',
 );
