@@ -33,6 +33,12 @@ class Sift
 	protected $properties = array();
 
 	/**
+	 * Array of filterable smw properties
+	 * @var array
+	 */
+	protected $filterProperties = array();
+
+	/**
 	 * HTTP Query storage system for filter selection
 	 * @var FilterStorageHTTPQuery
 	 */
@@ -148,7 +154,7 @@ class Sift
 	{
 		$smwStore = StoreFactory::getStore();
 		$output = '<form class="ss-filteringform">';
-		foreach ($this->properties as $p => $v) {
+		foreach ($this->filterProperties as $p => $v) {
 			$displayValue = is_null($v) ? $p : $v;
 			$property = \SMWDIProperty::newFromUserLabel($p);
 			$pValues = $this->getPropertyValue($smwStore, $property);
@@ -177,9 +183,14 @@ class Sift
 		foreach ($parameters as $key => &$arg) {
 			$arg = trim($arg);
 			list($property, $value) = array_pad(explode('=', $arg, 2), 2, null);
+
 			switch (substr($arg, 0, 1)) {
+				case '!':
+					//Extract smw property into filter array
+					$this->filterProperties[substr($property, 1)] = $value;
+					unset($parameters[$key]);
+					break;
 				case '?':
-					//case '!': //FIXME why is this here?
 					//Extract smw property into its own array
 					$this->properties[substr($property, 1)] = $value;
 					unset($parameters[$key]);
@@ -201,6 +212,13 @@ class Sift
 					break;
 			}
 
+		}
+
+		/**
+		 * If the list of filterable properties is zero, add all smw properties to the array.
+		 */
+		if(count($this->filterProperties) === 0){
+			$this->filterProperties = $this->properties;
 		}
 
 		$defaultParams = array(
@@ -228,8 +246,20 @@ class Sift
 	 */
 	private function getOutput()
 	{
-		$queryOutput = $this->createSMWQueryComponent();
-		$filteringComponent = $this->parameters['showfilter']->getValue() ?  $this->createFilteringComponent() : '';
+		$queryOutput =  $filteringComponent = '';
+		switch($this->parameters['display']->getValue()){
+			case 'filter':
+				$filteringComponent = $this->createFilteringComponent();
+				break;
+			case 'result':
+				$queryOutput = $this->createSMWQueryComponent();
+				break;
+			case 'both':
+			default:
+				$queryOutput = $this->createSMWQueryComponent();
+				$filteringComponent = $this->createFilteringComponent();
+				break;
+		}
 
 		//create final html output
 		$id = uniqid();
@@ -296,11 +326,10 @@ EOT;
 				'message' => 'semanticsifter-param-filterwidth'
 			),
 			array(
-				'name' => 'showfilter',
-				'default' => true,
-				'type' => 'boolean',
-				'message' => 'semanticsifter-param-showfilter'
-			),
+				'name' => 'display',
+				'default' => 'both',
+				'message' => 'semanticsifter-param-display'
+			)
 		);
 	}
 } 
