@@ -42,6 +42,7 @@ $messages['de'] = array(
  */
 $messages['es'] = array(
 	'semanticsifter-button-apply-filter' => 'Aplicar filtro',
+	'semanticsifter-message-siftlink-params-error' => 'Faltan parámetros de la función del analizador «siftlink».',
 );
 
 /** French (français)
