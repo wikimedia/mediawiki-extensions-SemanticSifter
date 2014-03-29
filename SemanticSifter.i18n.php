@@ -92,6 +92,13 @@ $messages['nl'] = array(
 	'semanticsifter-button-apply-filter' => 'Filter toepassen',
 );
 
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'semanticsifter-button-apply-filter' => 'Zastosuj filtr',
+);
+
 /** Russian (русский)
  * @author Okras
  */
