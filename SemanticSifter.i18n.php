@@ -173,3 +173,12 @@ $messages['zh-hans'] = array(
 	'semanticsifter-button-apply-filter' => '应用筛选器',
 	'semanticsifter-message-siftlink-params-error' => '缺少待筛选解析器函数。',
 );
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Liuxinyu970226
+ */
+$messages['zh-hant'] = array(
+	'semanticsifter-desc' => '允許經由semantic資料篩選，並可於視圖中顯示結果',
+	'semanticsifter-button-apply-filter' => '應用篩選器',
+	'semanticsifter-message-siftlink-params-error' => '缺失對siftlink函數解析器參數。',
+);
