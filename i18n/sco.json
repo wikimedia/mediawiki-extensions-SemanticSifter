@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "John Reid"
+        ]
+    },
+    "semanticsifter-desc": "Permits siftin throoch semanteec data n displeys the ootcome in ae filterable luik",
+    "semanticsifter-button-apply-filter": "Applie filter",
+    "semanticsifter-message-siftlink-params-error": "Missin boonds tae siftlink parser function."
+}

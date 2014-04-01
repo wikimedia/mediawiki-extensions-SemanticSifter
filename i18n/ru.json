@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Okras"
+        ]
+    },
+    "semanticsifter-desc": "Позволяет просеивать семантические данные и отображает результат в фильтруемом виде",
+    "semanticsifter-button-apply-filter": "Применить фильтр",
+    "semanticsifter-message-siftlink-params-error": "Отсутствуют параметры функции парсера siftlink."
+}

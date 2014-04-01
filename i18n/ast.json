@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Xuacu"
+        ]
+    },
+    "semanticsifter-desc": "Permite peñerar datos semánticos y amuesa'l resultáu nuna vista filtrable",
+    "semanticsifter-button-apply-filter": "Aplicar filtru",
+    "semanticsifter-message-siftlink-params-error": "Faltan parámetros pa la función d'analizador siftlink."
+}

@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Liuxinyu970226"
+        ]
+    },
+    "semanticsifter-desc": "允许通过语义数据筛选以及在筛选视图中显示结果",
+    "semanticsifter-button-apply-filter": "应用筛选器",
+    "semanticsifter-message-siftlink-params-error": "缺少待筛选解析器函数。"
+}

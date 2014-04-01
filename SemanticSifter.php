@@ -14,14 +14,14 @@ if ( !defined( 'ParamProcessor_VERSION' ) ) {
 	die( 1 );
 }
 
-global $wgExtensionCredits,$wgHooks,$wgExtensionMessagesFiles,$wgResourceModules,$wgAjaxExportList;
+global $wgExtensionCredits,$wgHooks,$wgExtensionMessagesFiles,$wgMessagesDirs,$wgResourceModules,$wgAjaxExportList;
 
 //credits
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Semantic Sifter',
 	'descriptionmsg' => 'semanticsifter-desc',
-	'version' => '0.0.1',
+	'version' => '0.1.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:SemanticSifter',
 	'author' => 'Kim Eik',
 );
@@ -34,6 +34,7 @@ $wgHooks['ParserFirstCallInit'][] = 'SemanticSifter\SemanticSifterHooks::parserF
 $wgHooks['UnitTestsList'][] = 'SemanticSifter\SemanticSifterHooks::unitTestsInit';
 
 //i18n
+$wgMessagesDirs['SemanticSifter'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SemanticSifter'] = dirname( __FILE__ ) . '/SemanticSifter.i18n.php';
 $wgExtensionMessagesFiles['SemanticSifterMagic'] = dirname( __FILE__ ) . '/SemanticSifter.i18n.magic.php';
 
