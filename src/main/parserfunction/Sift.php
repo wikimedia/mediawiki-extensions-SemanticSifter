@@ -50,6 +50,17 @@ class Sift
 	 */
 	protected $title;
 
+	/**
+	 * Array of overidden property values to be shown in filtering suggestions
+	 * @var array
+	 */
+	protected $propertyValues = array();
+
+
+	/**
+	 * @var \SMW\Store
+	 */
+	protected $smwStore;
 
 	/**
 	 * @param $parser \Parser
@@ -65,20 +76,25 @@ class Sift
 		$this->parser = $parser;
 		$this->title = $parser->getTitle();
 		$this->parseParameters($parameters);
+
+		$this->smwStore = StoreFactory::getStore();
 	}
 
 	/**
-	 * @param \SMW\Store $smwStore
 	 * @param \SMW\DIProperty $property
-	 * @return array
 	 * @throws \Exception
+	 * @return array
 	 */
-	private function getPropertyValue($smwStore, $property)
+	private function getPropertyValue($property)
 	{
-		$wikiPages = $smwStore->getAllPropertySubjects($property);
+		if(array_key_exists($property->getLabel(),$this->propertyValues)){
+			return $this->propertyValues[$property->getLabel()];
+		}
+
+		$wikiPages = $this->smwStore->getAllPropertySubjects($property);
 		$v = array();
 		foreach ($wikiPages as $wp) {
-			foreach ($smwStore->getPropertyValues($wp, $property) as $value) {
+			foreach ($this->smwStore->getPropertyValues($wp, $property) as $value) {
 				if ($value instanceof \SMWDataItem) {
 					switch ($value->getDIType()) {
 						case \SMWDataItem::TYPE_WIKIPAGE:
@@ -135,13 +151,13 @@ class Sift
 		$tableFilters = $this->createSMWQueryFilter();
 		$tableQuery .= "{{#ask: {$this->parameters['query']->getValue()} $tableFilters";
 		foreach ($this->properties as $property => $value) {
-			$tableQuery .= '|?' . (is_null($value) ? $property : "$property=$value");
+			$tableQuery .= "\n|?" . (is_null($value) ? $property : "$property=$value");
 		}
 
 		foreach ($this->formatParams as $name => $value) {
-			$tableQuery .= "|$name=$value";
+			$tableQuery .= "\n|$name=$value";
 		}
-		$tableQuery .= '}}';
+		$tableQuery .= "\n}}";
 
 		return $tableQuery;
 	}
@@ -152,12 +168,12 @@ class Sift
 	 */
 	private function createFilteringComponent()
 	{
-		$smwStore = StoreFactory::getStore();
+
 		$output = '<form class="ss-filteringform">';
 		foreach ($this->filterProperties as $p => $v) {
 			$displayValue = is_null($v) ? $p : $v;
 			$property = \SMWDIProperty::newFromUserLabel($p);
-			$pValues = $this->getPropertyValue($smwStore, $property);
+			$pValues = $this->getPropertyValue($property);
 			$output .= "<div class=\"ss-propertyfilter\">";
 			$output .= "<select name=\"$p\" class=\"ss-property-select\" data-placeholder=\"$displayValue\" title=\"$displayValue\" multiple>";
 			foreach ($pValues as $pValue) {
@@ -181,42 +197,53 @@ class Sift
 	{
 
 		foreach ($parameters as $key => &$arg) {
+			if($key === 0){
+				continue;
+			}
+
 			$arg = trim($arg);
+			$arg = explode(';',$arg);
+			$additionalProps = array_slice($arg,1);
+			$arg = $arg[0];
+
+			// parse <property> = <value>
 			list($property, $value) = array_pad(explode('=', $arg, 2), 2, null);
 
-			switch (substr($arg, 0, 1)) {
-				case '!':
+			$flag = substr($property, 0, 1);
+			if($flag === '?' || $flag === '!'){
+				$property = substr($property,1);
+				if($flag === '!'){
+					$property = substr($property, 1);
 					//Extract smw property into filter array
-					$this->filterProperties[substr($property, 1)] = $value;
+					$this->filterProperties[$property] = $value;
 					unset($parameters[$key]);
-					break;
-				case '?':
+				}else if($flag === '?'){
 					//set property of type |?=... as format parameter, used in conjunction with the mainlabel parameter
-					if ($property === '?') {
-						$this->formatParams[$property] = $value;
-						unset($parameters[$key]);
+					if ($property === false) {
+						$this->formatParams['?'] = $value;
+					}else{
+						//Extract smw property into its own array
+						$this->properties[$property] = $value;
+					}
+					unset($parameters[$key]);
+				}
+				//parse additional property parameters
+				$this->parsePropertyParameters($property,$additionalProps);
+			}else{
+				$siftParameter = false;
+				foreach ($this->getParametersDefinitions() as $parameterDef) {
+					if ($parameterDef['name'] === $property) {
+						$siftParameter = true;
 						break;
 					}
-					//Extract smw property into its own array
-					$this->properties[substr($property, 1)] = $value;
-					unset($parameters[$key]);
-					break;
-				default:
-					if ($key !== 0) {
-						$siftParameter = false;
-						foreach ($this->getParametersDefinitions() as $parameterDef) {
-							if ($parameterDef['name'] === $property) {
-								$siftParameter = true;
-							}
-						}
+				}
 
-						if (!$siftParameter) {
-							$this->formatParams[$property] = $value;
-							unset($parameters[$key]);
-						}
-					}
-					break;
+				if (!$siftParameter) {
+					$this->formatParams[$property] = $value;
+					unset($parameters[$key]);
+				}
 			}
+
 
 		}
 
@@ -247,6 +274,20 @@ class Sift
 	}
 
 	/**
+	 * @param $property string
+	 * @param $parameters array
+	 */
+	private function parsePropertyParameters($property, $parameters){
+		foreach ($parameters as $parameter){
+			list($key,$value) = explode('=',$parameter);
+			switch($key){
+				case 'values':
+					$this->propertyValues[$property] = explode(',',$value);
+			}
+		}
+	}
+
+	/**
 	 * Returns the final output
 	 * @return string
 	 */
@@ -271,6 +312,7 @@ class Sift
 		$id = uniqid();
 		$jsonParams = array('filterbox-width' => $this->parameters['filterwidth']->getValue());
 		$jsonParams = json_encode($jsonParams);
+		$debugOut = array_key_exists('debug',$_GET) && $_GET['debug'] === 'true' ? '<pre>'.$queryOutput.'</pre>' : '';
 		$output = <<<EOT
 			<script type="text/javascript">
 				if(window.SemanticSifter === undefined){
@@ -279,6 +321,7 @@ class Sift
 				window.SemanticSifter['$id'] = $jsonParams;
 			</script>
 			<div id="$id" class="ss-container" style="display: none;">
+					{$debugOut}
 					{$filteringComponent}
 					<div style="overflow:auto">
 						{$this->parser->recursiveTagParse($queryOutput)}
