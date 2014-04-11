@@ -213,7 +213,6 @@ class Sift
 			if($flag === '?' || $flag === '!'){
 				$property = substr($property,1);
 				if($flag === '!'){
-					$property = substr($property, 1);
 					//Extract smw property into filter array
 					$this->filterProperties[$property] = $value;
 					unset($parameters[$key]);
