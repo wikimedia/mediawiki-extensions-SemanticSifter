@@ -2,9 +2,11 @@
 
 namespace SemanticSifter\ParserFunction;
 
+use Category;
 use ParamProcessor\Processor;
 use SemanticSifter\Model\FilterStorageHTTPQuery;
 use SMW\StoreFactory;
+use Title;
 
 class Sift
 {
@@ -282,6 +284,13 @@ class Sift
 			switch($key){
 				case 'values':
 					$this->propertyValues[$property] = explode(',',$value);
+					break;
+				case 'values from category':
+					$this->propertyValues[$property] = $this->getValuesFromCategory($value);
+					break;
+				case 'values from subpage':
+					$this->propertyValues[$property] = $this->getValuesFromSubpage($value);
+					break;
 			}
 		}
 	}
@@ -379,5 +388,67 @@ EOT;
 				'message' => 'semanticsifter-param-display'
 			)
 		);
+	}
+
+	/**
+	 * @param $category string
+	 * @return array
+	 */
+	private function getValuesFromCategory($category){
+		global $wgParser;
+		$category = $wgParser->recursiveTagParse($category);
+		$category = Title::newFromText($category);
+		if ( is_null( $category ) ) {
+			return array();
+		}
+		$category = Category::newFromTitle($category);
+		$catMembers = $category->getMembers();
+		$result = array();
+		while($catMembers->valid()){
+			/**
+			 * @var $member Title
+			 */
+			$member = $catMembers->current();
+			$result[] = $member->getText();
+			$catMembers->next();
+		}
+		return $result;
+	}
+
+	/**
+	 * @param $title string
+	 * @return array
+	 */
+	private function getValuesFromSubpage($title){
+		global $wgParser;
+		$title = $wgParser->recursiveTagParse($title);
+		$title = Title::newFromText($title);
+		if ( is_null( $title ) ) {
+			return array();
+		}
+
+		$subPages = $title->getSubpages();
+		if(empty($subPages)){
+			return array();
+		}
+		/** @var Title[] $titles */
+		$titles[ ] = $title;
+		while ( $subPages->valid() ) {
+			$titles[ ] = $subPages->current();
+			$subPages->next();
+		}
+
+		$result = array();
+		foreach ( $titles as $title ) {
+			$titleText = $title->getFullText();
+			$titleTextParts = explode( '/', $titleText );
+			$titleText = '';
+			foreach ( $titleTextParts as $part ) {
+				$titleText .= $part;
+				$result[ $titleText ] = null;
+				$titleText .= '/';
+			}
+		}
+		return array_keys($result);
 	}
 } 
