@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Beta16"
+        ]
+    },
+    "semanticsifter-desc": "Permette di vagliare attraverso dati semantici e mostrare il risultato in una vista filtrabile",
+    "semanticsifter-button-apply-filter": "Applica il filtro",
+    "semanticsifter-message-siftlink-params-error": "Parametri mancanti per la funzione parser siftlink."
+}
