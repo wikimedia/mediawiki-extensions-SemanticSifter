@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "semanticsifter-button-apply-filter": "フィルターを適用"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"semanticsifter-button-apply-filter": "フィルターを適用"
 }

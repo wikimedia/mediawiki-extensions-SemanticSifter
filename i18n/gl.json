@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Toliño"
-        ]
-    },
-    "semanticsifter-desc": "Permite examinar os datos semánticos e mostra os resultados nunha vista que se pode filtrar",
-    "semanticsifter-button-apply-filter": "Aplicar o filtro",
-    "semanticsifter-message-siftlink-params-error": "Faltan parámetros para a función de análise."
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"semanticsifter-desc": "Permite examinar os datos semánticos e mostra os resultados nunha vista que se pode filtrar",
+	"semanticsifter-button-apply-filter": "Aplicar o filtro",
+	"semanticsifter-message-siftlink-params-error": "Faltan parámetros para a función de análise."
 }

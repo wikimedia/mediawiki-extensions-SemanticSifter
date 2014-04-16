@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "semanticsifter-button-apply-filter": "Zastosuj filtr"
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"semanticsifter-button-apply-filter": "Zastosuj filtr"
 }

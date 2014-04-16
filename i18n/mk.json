@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "semanticsifter-desc": "Овозможува филтрирање на семантички податоци и ги прикажува резултатите во преглед со филтер",
-    "semanticsifter-button-apply-filter": "Примени филтер",
-    "semanticsifter-message-siftlink-params-error": "Недостасува параметар за филтерската расчленувачка функција."
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"semanticsifter-desc": "Овозможува филтрирање на семантички податоци и ги прикажува резултатите во преглед со филтер",
+	"semanticsifter-button-apply-filter": "Примени филтер",
+	"semanticsifter-message-siftlink-params-error": "Недостасува параметар за филтерската расчленувачка функција."
 }
