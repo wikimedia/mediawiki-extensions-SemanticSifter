@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Jopparn"
 		]
 	},
-	"semanticsifter-button-apply-filter": "Verkställ filter"
+	"semanticsifter-desc": "Ger möjlighet att sålla semantisk data och visar resultatet i en filtrerbar vy",
+	"semanticsifter-button-apply-filter": "Verkställ filter",
+	"semanticsifter-message-siftlink-params-error": "Saknade parametrar till siftlink parser-funktionen."
 }
