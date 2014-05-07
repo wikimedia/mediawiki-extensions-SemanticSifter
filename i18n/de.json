@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Kghbln"
 		]
 	},
-	"semanticsifter-desc": "Ermöglicht die Filterung semantischer Daten und die Anzeige des Ergebnisses in einer filterbaren Ansicht",
+	"semanticsifter-desc": "Ermöglicht das Durchsuchen semantischer Daten und deren Anzeige in einer filterbaren Ansicht",
 	"semanticsifter-button-apply-filter": "Filter anwenden",
 	"semanticsifter-message-siftlink-params-error": "Fehlende Parameter für die Filter-Parserfunktion."
 }
