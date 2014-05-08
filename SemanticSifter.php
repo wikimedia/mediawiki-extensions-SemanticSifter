@@ -17,7 +17,7 @@ if ( !defined( 'ParamProcessor_VERSION' ) ) {
 global $wgExtensionCredits,$wgHooks,$wgExtensionMessagesFiles,$wgMessagesDirs,$wgResourceModules,$wgAjaxExportList;
 
 //credits
-$wgExtensionCredits['parserhook'][] = array(
+$wgExtensionCredits['semantic'][] = array(
 	'path' => __FILE__,
 	'name' => 'Semantic Sifter',
 	'descriptionmsg' => 'semanticsifter-desc',
