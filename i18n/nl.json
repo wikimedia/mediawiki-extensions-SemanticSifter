@@ -5,7 +5,5 @@
 			"Rangekill"
 		]
 	},
-	"semanticsifter-desc": "Laat om te ziften door middel van semantische gegevens en geeft het resultaat weer in een filterable bekijken",
-	"semanticsifter-button-apply-filter": "Filter toepassen",
-	"semanticsifter-message-siftlink-params-error": "Ontbrekende parameters te siftlink parser functie."
+	"semanticsifter-button-apply-filter": "Filter toepassen"
 }
