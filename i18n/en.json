@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kim Eik"
-        ]
-    },
-    "semanticsifter-desc": "Allows to sift through semantic data and displays the result in a filterable view",
-    "semanticsifter-button-apply-filter": "Apply filter",
-    "semanticsifter-message-siftlink-params-error": "Missing parameters to siftlink parser function."
+	"@metadata": {
+		"authors": [
+			"Kim Eik"
+		]
+	},
+	"semanticsifter-desc": "Allows to sift through semantic data and displays the result in a filterable view",
+	"semanticsifter-button-apply-filter": "Apply filter",
+	"semanticsifter-message-siftlink-params-error": "Missing parameters to siftlink parser function."
 }
