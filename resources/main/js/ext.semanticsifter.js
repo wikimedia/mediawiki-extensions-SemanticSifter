@@ -1,4 +1,4 @@
-(function ($, mw) {
+( function ( $, mw ) {
 
 
     function serializeObject(obj) {
@@ -23,7 +23,7 @@
 
         form.each(function(){
             $(this).submit(function () {
-                var filters = serializeObject(form)
+                var filters = serializeObject(form);
                 var data = $.get(
                     mw.util.wikiScript(),
                     {
@@ -52,4 +52,4 @@
 
         container.fadeIn();
     });
-})($, mw);
+}( jQuery, mediaWiki ) );
