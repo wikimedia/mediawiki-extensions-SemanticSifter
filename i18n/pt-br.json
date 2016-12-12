@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"!Silent"
+		]
+	},
+	"semanticsifter-desc": "Permite examinar os dados semânticos e exibir os resultados numa lista de visualização filtrável",
+	"semanticsifter-button-apply-filter": "Aplicar filtro",
+	"semanticsifter-message-siftlink-params-error": "Faltam parâmetros para a função \"siftlink\" do analisador sintático."
+}
