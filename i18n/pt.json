@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"semanticsifter-desc": "Permite examinar os dados semânticos e apresenta os resultados numa vista filtrável",
+	"semanticsifter-button-apply-filter": "Aplicar filtro",
+	"semanticsifter-message-siftlink-params-error": "Faltam parâmetros para a função \"siftlink\" do analisador sintático."
+}
