@@ -21,7 +21,7 @@ $wgExtensionCredits['semantic'][] = array(
 	'path' => __FILE__,
 	'name' => 'Semantic Sifter',
 	'descriptionmsg' => 'semanticsifter-desc',
-	'version' => '0.1.0',
+	'version' => '0.2.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:SemanticSifter',
 	'author' => 'Kim Eik',
 	'license-name' => 'GPL-3.0'
@@ -36,14 +36,16 @@ $wgHooks['UnitTestsList'][] = 'SemanticSifter\SemanticSifterHooks::unitTestsInit
 
 //i18n
 $wgMessagesDirs['SemanticSifter'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SemanticSifter'] = dirname( __FILE__ ) . '/SemanticSifter.i18n.php';
-$wgExtensionMessagesFiles['SemanticSifterMagic'] = dirname( __FILE__ ) . '/SemanticSifter.i18n.magic.php';
+$wgExtensionMessagesFiles['SemanticSifterMagic'] = __DIR_ . '/SemanticSifter.i18n.magic.php';
 
 //resource modules
 $wgResourceModules['ext.semanticsifter'] = array(
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'SemanticSifter',
-	'dependencies' => array( 'jquery.chosen','mediawiki.Uri' ),
+	'dependencies' => array(
+		'jquery.chosen',
+		'mediawiki.Uri'
+	),
 	'scripts' => '/resources/main/js/ext.semanticsifter.js',
 	'styles' => '/resources/main/css/ext.semanticsifter.css'
 );
