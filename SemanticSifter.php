@@ -36,7 +36,7 @@ $wgHooks['UnitTestsList'][] = 'SemanticSifter\SemanticSifterHooks::unitTestsInit
 
 //i18n
 $wgMessagesDirs['SemanticSifter'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SemanticSifterMagic'] = __DIR_ . '/SemanticSifter.i18n.magic.php';
+$wgExtensionMessagesFiles['SemanticSifterMagic'] = __DIR__ . '/SemanticSifter.i18n.magic.php';
 
 //resource modules
 $wgResourceModules['ext.semanticsifter'] = array(
