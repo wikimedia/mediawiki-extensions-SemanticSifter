@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Event"
+		]
+	},
+	"semanticsifter-desc": "Tillater å sile gjennom de semantiske data og få resultatet i en filtrerbart visning",
+	"semanticsifter-button-apply-filter": "Bruk filter",
+	"semanticsifter-message-siftlink-params-error": "Manglende parametre til \"siftlink parser\"-funksjonen."
+}
