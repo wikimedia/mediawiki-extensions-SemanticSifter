@@ -5,6 +5,6 @@
 		]
 	},
 	"semanticsifter-desc": "允許經由semantic資料篩選，並可於視圖中顯示結果",
-	"semanticsifter-button-apply-filter": "應用篩選器",
+	"semanticsifter-button-apply-filter": "套用搜尋條件",
 	"semanticsifter-message-siftlink-params-error": "缺失對siftlink函數解析器參數。"
 }
