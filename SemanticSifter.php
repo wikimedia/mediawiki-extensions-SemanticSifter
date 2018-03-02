@@ -24,7 +24,7 @@ $wgExtensionCredits['semantic'][] = array(
 	'version' => '0.2.0',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:SemanticSifter',
 	'author' => 'Kim Eik',
-	'license-name' => 'GPL-3.0'
+	'license-name' => 'GPL-3.0-only'
 );
 
 //ajax
