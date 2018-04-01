@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"semanticsifter-desc": "يُسمَح بالبحث من خلال البيانات الدلالية ويعرض النتيجة في عرض قابل للتصفية",
+	"semanticsifter-button-apply-filter": "تطبيق المرشح",
+	"semanticsifter-message-siftlink-params-error": "وسائط مفقودة لوظيفة محلل siftlink."
+}
