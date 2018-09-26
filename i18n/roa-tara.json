@@ -4,5 +4,7 @@
 			"Joetaras"
 		]
 	},
-	"semanticsifter-button-apply-filter": "Appleche 'u filtre"
+	"semanticsifter-desc": "Face condrollà ausanne date semandece e face 'ndrucà 'u resultate jndr'à 'na viste cu le filtre",
+	"semanticsifter-button-apply-filter": "Appleche 'u filtre",
+	"semanticsifter-message-siftlink-params-error": "Parametre mangande pa funzione analizzatrice siftlink."
 }
