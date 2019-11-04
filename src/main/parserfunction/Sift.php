@@ -348,7 +348,7 @@ EOT;
 	public static function parserHook(\Parser &$parser)
 	{
 		$parser->getOutput()->addModules('ext.semanticsifter');
-		$parser->disableCache();
+		$parser->getOutput()->updateCacheExpiry( 0 );
 
 		$args = func_get_args();
 		array_shift($args);
