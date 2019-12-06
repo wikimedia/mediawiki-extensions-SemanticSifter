@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"semanticsifter-desc": "Anlamsal veriler arasında geçiş yapmanıza olanak sağlar ve sonucu filtrelenebilir görünümde görüntüler.",
+	"semanticsifter-button-apply-filter": "Süzgeci uygula",
+	"semanticsifter-message-siftlink-params-error": "Siftlink ayrıştırıcı işlevinde eksik parametreler."
+}
