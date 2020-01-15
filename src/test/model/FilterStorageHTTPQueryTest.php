@@ -32,7 +32,7 @@ class FilterStorageHTTPQueryTest extends \MediaWikiTestCase {
 	}
 
 	public function testGetFiltersFromGETWhenInvalidFormat() {
-		$this->setExpectedException('InvalidArgumentException');
+		$this->expectException( \InvalidArgumentException::class );
 		$_GET['filter'] = 'INVALID';
 		$this->filterStorage = new FilterStorageHTTPQuery();
 	}
