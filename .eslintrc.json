@@ -2,13 +2,12 @@
 	"root": true,
 	"extends": [
 		"wikimedia/client",
-		"wikimedia/jquery"
+		"wikimedia/jquery",
+		"wikimedia/mediawiki"
 	],
 	"globals": {
-		"OO": false,
 		"jQuery": false,
-		"mediaWiki": false,
-		"mw": false
+		"mediaWiki": false
 	},
 	"rules": {
 		"no-unused-vars": "warn",
