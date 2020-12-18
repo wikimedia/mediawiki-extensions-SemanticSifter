@@ -38,7 +38,7 @@ class FilterStorageHTTPQueryTest extends \MediaWikiTestCase {
 	}
 
 	public function testAddFilter() {
-		$this->assertType('SemanticSifter\FilterStorageHTTPQuery',$this->filterStorage->addFilter('Property','Value'));
+		$this->assertInstanceOf(SemanticSifter\FilterStorageHTTPQuery::class,$this->filterStorage->addFilter('Property','Value'));
 		$this->assertArrayEquals( array(
 			'Property' => array( 'Value' )
 		), $this->filterStorage->getFilters() );
