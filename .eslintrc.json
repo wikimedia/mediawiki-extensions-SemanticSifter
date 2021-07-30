@@ -11,7 +11,6 @@
 	},
 	"rules": {
 		"no-unused-vars": "warn",
-		"vars-on-top": "warn",
 		"no-jquery/variable-pattern": "warn",
 		"no-jquery/no-global-selector": "warn",
 		"no-jquery/no-each-util": "warn"
