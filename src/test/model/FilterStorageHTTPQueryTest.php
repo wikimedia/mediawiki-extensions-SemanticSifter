@@ -6,7 +6,7 @@
 namespace SemanticSifter;
 
 
-class FilterStorageHTTPQueryTest extends \MediaWikiTestCase {
+class FilterStorageHTTPQueryTest extends \MediaWikiIntegrationTestCase {
 	/**
 	 * @var FilterStorageHTTPQuery
 	 */
