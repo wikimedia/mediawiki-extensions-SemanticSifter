@@ -17,9 +17,7 @@
 		}
 	],
 	"autoload": {
-		"files": [
-			"SemanticSifter.php"
-		],
+		"files": [],
 		"classmap": [
 			"src/"
 		]
