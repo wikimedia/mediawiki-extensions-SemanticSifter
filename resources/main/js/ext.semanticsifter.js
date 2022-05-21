@@ -16,7 +16,7 @@
 		return o;
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		var container = $( '.ss-container' ),
 			form = $( '.ss-filteringform' );
 
