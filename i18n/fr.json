@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Maxim21"
+			"Maxim21",
+			"Verdy p"
 		]
 	},
-	"semanticsifter-desc": "Permet d'examiner les données sémantiques et affiche le résultat dans une vue filtrable",
+	"semanticsifter-desc": "Permet d’examiner les données sémantiques et affiche le résultat dans une vue filtrable",
 	"semanticsifter-button-apply-filter": "Appliquer le filtre",
-	"semanticsifter-message-siftlink-params-error": "Paramètres manquants à la fonction siftlink de l’analyseur."
+	"semanticsifter-message-siftlink-params-error": "Paramètres manquants à la fonction « siftlink » de l’analyseur."
 }
