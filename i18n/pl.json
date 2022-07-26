@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"SemanticPioneer"
 		]
 	},
-	"semanticsifter-button-apply-filter": "Zastosuj filtr"
+	"semanticsifter-desc": "Pozwala na przeglądanie danych semantycznych i wyświetla wynik w filtrowalnym widoku",
+	"semanticsifter-button-apply-filter": "Zastosuj filtr",
+	"semanticsifter-message-siftlink-params-error": "Brakujące parametry funkcji parsera siftlink."
 }
