@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"semanticsifter-desc": "אפשרות לנפות נתונים סמנטיים ולהציג את התוצאה בתצוגה ניתנת לסינון",
+	"semanticsifter-button-apply-filter": "החלת מסנן",
+	"semanticsifter-message-siftlink-params-error": "חסרים פרמטרים לפונקציית המפענח siftlink."
+}
