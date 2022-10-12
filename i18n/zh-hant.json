@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Lakejason0"
 		]
 	},
 	"semanticsifter-desc": "允許經由semantic資料篩選，並可於視圖中顯示結果",
 	"semanticsifter-button-apply-filter": "套用搜尋條件",
-	"semanticsifter-message-siftlink-params-error": "缺失對siftlink函數解析器參數。"
+	"semanticsifter-message-siftlink-params-error": "缺失對siftlink解析器函數參數。"
 }
