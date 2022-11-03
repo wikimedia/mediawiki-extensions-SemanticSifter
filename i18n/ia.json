@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"semanticsifter-desc": "Permitte examinar datos semantic e monstra le resultato in un vista filtrabile.",
+	"semanticsifter-button-apply-filter": "Applicar filtro",
+	"semanticsifter-message-siftlink-params-error": "Manca parametros al function analysator \"siftlink\"."
+}
