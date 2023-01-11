@@ -4,5 +4,7 @@
 			"Eleassar"
 		]
 	},
-	"semanticsifter-button-apply-filter": "Uporabi filter"
+	"semanticsifter-desc": "Omogoča presejanje semantičnih podatkov in prikaže rezultat v pogledu, ki ga je mogoče filtrirati",
+	"semanticsifter-button-apply-filter": "Uporabi filter",
+	"semanticsifter-message-siftlink-params-error": "Manjkajoči parametri za funkcijo razčlenjevalnika »siftlink«"
 }
