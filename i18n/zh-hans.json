@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"LittlePaw365",
 			"Liuxinyu970226"
 		]
 	},
-	"semanticsifter-desc": "允许通过语义数据筛选以及在筛选视图中显示结果",
-	"semanticsifter-button-apply-filter": "应用过滤器",
-	"semanticsifter-message-siftlink-params-error": "缺少待筛选解析器函数。"
+	"semanticsifter-desc": "允许筛查语义数据并以可筛选视图显示结果",
+	"semanticsifter-button-apply-filter": "应用筛选",
+	"semanticsifter-message-siftlink-params-error": "siftlink解析器函数缺少参数。"
 }
