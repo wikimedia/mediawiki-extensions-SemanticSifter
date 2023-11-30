@@ -2,8 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Rangekill",
-			"Siebrand"
+			"Siebrand",
+			"McDutchie"
 		]
 	},
-	"semanticsifter-button-apply-filter": "Filter toepassen"
+	"semanticsifter-desc": "Maakt het mogelijk semantische gegevens te doorzoeken en geeft het resultaat weer in een filterbare weergave.",
+	"semanticsifter-button-apply-filter": "Filter toepassen",
+	"semanticsifter-message-siftlink-params-error": "Ontbrekende parameters voor de parserfunctie siftlink."
 }
