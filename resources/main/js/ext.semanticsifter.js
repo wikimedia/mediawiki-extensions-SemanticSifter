@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 
 	function serializeObject( obj ) {
-		var o = {},
+		const o = {},
 			a = obj.serializeArray();
 		$.each( a, function () {
 			if ( o[ this.name ] !== undefined ) {
@@ -16,13 +16,13 @@
 		return o;
 	}
 
-	$( function () {
-		var container = $( '.ss-container' ),
+	$( () => {
+		const container = $( '.ss-container' ),
 			form = $( '.ss-filteringform' );
 
 		form.each( function () {
-			$( this ).on( 'submit', function () {
-				var filters = serializeObject( form ),
+			$( this ).on( 'submit', () => {
+				const filters = serializeObject( form ),
 					data = $.get(
 						mw.util.wikiScript(),
 						{
@@ -30,8 +30,8 @@
 							rs: 'SemanticSifter\\API\\API::filter',
 							rsargs: [ JSON.stringify( filters ) ]
 						}
-					).done( function ( response ) {
-						var uri = new mw.Uri();
+					).done( ( response ) => {
+						const uri = new mw.Uri();
 						uri.extend( { filter: response } );
 						window.location.href = uri;
 					} );
@@ -42,8 +42,8 @@
 
 		container.find( '.ss-propertyfilter > select' ).chosen( { width: '100%' } );
 
-		for ( var key in window.SemanticSifter ) {
-			var config = window.SemanticSifter[ key ];
+		for ( const key in window.SemanticSifter ) {
+			const config = window.SemanticSifter[ key ];
 			$( '#' + key ).find( '.ss-propertyfilter' ).width( config[ 'filterbox-width' ] );
 
 		}
