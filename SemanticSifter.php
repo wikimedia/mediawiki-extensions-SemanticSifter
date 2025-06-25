@@ -32,7 +32,6 @@ $wgAjaxExportList[] = 'SemanticSifter\API\API::filter';
 
 //hooks
 $wgHooks['ParserFirstCallInit'][] = 'SemanticSifter\SemanticSifterHooks::parserFunctionInit';
-$wgHooks['UnitTestsList'][] = 'SemanticSifter\SemanticSifterHooks::unitTestsInit';
 
 //i18n
 $wgMessagesDirs['SemanticSifter'] = __DIR__ . '/i18n';
