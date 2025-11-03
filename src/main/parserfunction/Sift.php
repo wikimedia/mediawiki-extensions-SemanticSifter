@@ -2,11 +2,11 @@
 
 namespace SemanticSifter\ParserFunction;
 
-use Category;
+use MediaWiki\Category\Category;
+use MediaWiki\Title\Title;
 use ParamProcessor\Processor;
 use SemanticSifter\Model\FilterStorageHTTPQuery;
 use SMW\StoreFactory;
-use Title;
 
 class Sift
 {

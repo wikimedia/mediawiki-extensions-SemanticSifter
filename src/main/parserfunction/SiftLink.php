@@ -2,6 +2,8 @@
 
 namespace SemanticSifter\ParserFunction;
 
+use MediaWiki\Linker\Linker;
+use MediaWiki\Title\Title;
 use SemanticSifter\Model\FilterStorageHTTPQuery;
 
 class SiftLink {
@@ -15,13 +17,13 @@ class SiftLink {
 			$filterStorage = new FilterStorageHTTPQuery(false);
 			$filterStorage->setFiltersFromSeparatedString($filters);
 
-			$title = \Title::newFromText($parser->recursiveTagParse($title));
+			$title = Title::newFromText($parser->recursiveTagParse($title));
 
 			$filters = $filterStorage->size() > 0 ? array(
 				FilterStorageHTTPQuery::QUERY_KEY => $filterStorage->getFiltersAsQueryString(false)
 			) : array();
 
-			$output = \Linker::link($title,$text,array('title' => null),$filters);
+			$output = Linker::link($title,$text,array('title' => null),$filters);
 
 			return array($output, 'noparse' => true, 'isHTML' => true );
 		}catch (\Exception $e){
